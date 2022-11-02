@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nft-app/static/css/main.fa03d5e4.css",
+    "main.js": "/nft-app/static/js/main.ae0da290.js",
+    "index.html": "/nft-app/index.html",
+    "main.fa03d5e4.css.map": "/nft-app/static/css/main.fa03d5e4.css.map",
+    "main.ae0da290.js.map": "/nft-app/static/js/main.ae0da290.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa03d5e4.css",
+    "static/js/main.ae0da290.js"
+  ]
+}
