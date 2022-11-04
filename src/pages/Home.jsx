@@ -8,21 +8,25 @@ import { fetchNfts } from "../redux/slices/nftSlice";
 const Home = () => {
   const dispatch = useDispatch();
   const { assets } = useSelector((state) => state.nfts.nftItems);
-  const { status } = useSelector((state) => state.nfts);
-  console.log(status);
+  const { status, searchValue } = useSelector((state) => state.nfts);
   useEffect(() => {
     dispatch(fetchNfts());
   }, [dispatch]);
 
-  console.log(assets);
+  const nftProducts = assets
+    ?.filter((item) => {
+      if (item.name?.toLowerCase().includes(searchValue.toLowerCase())) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .map((item) => <NftItem key={item.id} item={item} />);
+
   return (
     <>
-      <div className="flex flex-wrap justify-around flex-[23%]">
-        {status === "loading" ? (
-          <Spinner />
-        ) : (
-          assets?.map((item) => <NftItem key={item.id} item={item} />)
-        )}
+      <div className="max-w-[1140px] mx-auto flex flex-wrap justify-between ">
+        {status === "loading" ? <Spinner /> : nftProducts}
       </div>
     </>
   );

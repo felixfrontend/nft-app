@@ -12,6 +12,7 @@ export const fetchNfts = createAsyncThunk("nft/fetchNfts", async () => {
 
 const initialState = {
   nftItems: [],
+  searchValue: "",
   status: null,
   currentProduct: null,
 };
@@ -22,6 +23,9 @@ const nftSlice = createSlice({
   reducers: {
     setCurrentProduct: (state, action) => {
       state.currentProduct = action.payload;
+    },
+    setSearchValue: (state, action) => {
+      state.searchValue = action.payload;
     },
   },
   extraReducers: {
@@ -39,7 +43,7 @@ const nftSlice = createSlice({
   },
 });
 
-export const { setCurrentProduct } = nftSlice.actions;
+export const { setCurrentProduct, setSearchValue } = nftSlice.actions;
 
 const { reducer } = nftSlice;
 export default reducer;

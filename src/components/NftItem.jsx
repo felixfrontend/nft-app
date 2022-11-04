@@ -12,7 +12,7 @@ const NftItem = ({ item }) => {
     if (str?.length > num) {
       return str.slice(0, num) + "...";
     } else {
-      return item.collection.name.slice(0, num) + "...";
+      return str;
     }
   };
 
@@ -24,7 +24,7 @@ const NftItem = ({ item }) => {
   return (
     <div className="w-[250px] rounded-lg shadow-md lg:max-w-sm my-6  cursor-pointer hover:bg-black/5 ">
       <img
-        className="object-contain w-full "
+        className="object-contain w-full h-[200px]"
         src={
           image_url
             ? image_url
@@ -34,7 +34,7 @@ const NftItem = ({ item }) => {
       />
       <div className="p-4 flex flex-col">
         <h4 className="text-xl font-semibold tracking-tight text-blue-600 my-2">
-          {truncateString(name, 15)}
+          {truncateString(name, 17)}
         </h4>
         <button
           onClick={handleClickNav}

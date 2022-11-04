@@ -6,8 +6,6 @@ const ProductPage = () => {
   const { currentProduct } = useSelector((state) => state.nfts);
   const navigate = useNavigate();
 
-  console.log(currentProduct);
-
   const modifiedDate = (date) => {
     const t = date.indexOf("T");
     const str = date?.substring(0, t);
